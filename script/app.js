@@ -54,6 +54,11 @@ function addTodo(event) {
       console.log("Button clicked");
       todoDiv.parentNode.removeChild(todoDiv);
     }
+    // Check complete function
+    function checkTask() {
+      console.log("Checked task");
+      newTodo.classList.add("stripe-through");
+    }
   }
 }
 
