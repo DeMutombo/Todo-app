@@ -13,6 +13,8 @@ body {
 }
 
 header {
+  display: flex;
+  flex-direction: column;
   font-size: 1.5rem;
 }
 
@@ -83,4 +85,9 @@ form button:hover {
 
 .complete-btn {
   background: rgb(73, 204, 73);
+}
+
+.stripe-through {
+  color: rgb(75, 71, 71);
+  text-decoration: line-through;
 }
