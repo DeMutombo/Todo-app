@@ -6,6 +6,7 @@ const notification = document.getElementById("notification");
 
 // Event Listeners
 todoButton.addEventListener("click", addTodo);
+todoList.addEventListener("click", deleteCheck);
 
 //Functions
 function addTodo(event) {
@@ -45,21 +46,31 @@ function addTodo(event) {
     // Clear the input field
     todoInput.value = "";
     //  eventListeners
-    trashButton.addEventListener("click", deleteBtn);
+    // trashButton.addEventListener("click", deleteBtn);
     completedButton.addEventListener("click", checkTask);
 
     // Functions
     // Delete function
-    function deleteBtn() {
-      console.log("Button clicked");
-      todoDiv.parentNode.removeChild(todoDiv);
-    }
+    // function deleteBtn() {
+    //   todoDiv.parentNode.removeChild(todoDiv);
+    // }
     // Check complete function
     function checkTask() {
-      console.log("Checked task");
-      newTodo.classList.add("stripe-through");
+      if (newTodo.classList.contains("stripe-through")) {
+        newTodo.classList.remove("stripe-through");
+      } else {
+        console.log("Checked task");
+        newTodo.classList.add("stripe-through");
+      }
     }
   }
 }
 
-// Delete Button Function
+// Delete and check completion
+function deleteCheck(e) {
+  const item = e.target;
+  const todo = item.parentElement;
+  if (item.classList[0] === "trash-btn") {
+    todo.remove();
+  }
+}
