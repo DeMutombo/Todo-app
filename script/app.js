@@ -70,8 +70,12 @@ function addTodo(event) {
 function deleteCheck(e) {
   const item = e.target;
   const todo = item.parentElement;
+
   if (item.classList[0] === "trash-btn") {
-    todo.remove();
+    todo.classList.add("remove-out");
+    todo.addEventListener("transitionend", function () {
+      todo.remove();
+    });
   }
   if (item.classList[0] === "complete-btn") {
     todo.classList.toggle("stripe-through");
