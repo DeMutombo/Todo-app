@@ -6,8 +6,9 @@
 }
 
 body {
-  background-image: linear-gradient(120deg, #e2c35d, #d88771);
-  color: #fff;
+  /* background-image: linear-gradient(120deg, #e2c35d, #d88771); */
+  background-image: url(/img/bread.jpg);
+  color: #d88771;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
 }
@@ -36,12 +37,12 @@ form button {
 
 form button {
   color: #d88771;
-  background-color: white;
+  background-color: #fff;
 }
 
 form button:hover {
   background-color: #d88771;
-  color: white;
+  color: #fff;
 }
 
 .todo-container {
@@ -88,7 +89,11 @@ form button:hover {
 }
 
 .stripe-through {
-  color: rgb(75, 71, 71);
   text-decoration: line-through;
-  background: rgb(236, 236, 236);
+  opacity: 0.6;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
 }
