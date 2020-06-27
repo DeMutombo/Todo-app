@@ -6,9 +6,11 @@
 }
 
 body {
-  /* background-image: linear-gradient(120deg, #e2c35d, #d88771); */
-  background-image: url(/img/bread.jpg);
-  color: #d88771;
+  /* background-image: linear-gradient(120deg, #fd8888, #8a8a8a); */
+  background-image: url(/img/black.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
 }
@@ -36,12 +38,13 @@ form button {
 }
 
 form button {
-  color: #d88771;
+  color: #ff6f47;
   background-color: #fff;
+  transition: all 0.3s ease;
 }
 
 form button:hover {
-  background-color: #d88771;
+  background-color: #ff6f47;
   color: #fff;
 }
 
@@ -95,7 +98,7 @@ form button:hover {
   background: rgb(73, 204, 73);
 }
 
-.stripe-through {
+.completed {
   text-decoration: line-through;
   opacity: 0.6;
 }
@@ -103,4 +106,39 @@ form button:hover {
 .fa-trash,
 .fa-check {
   pointer-events: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: #ff6f47;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+.select::after {
+  content: "\25BC";
+  background: #ff6f47;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+  transition: All 0.5s ease;
+}
+
+.select:hover::after {
+  background: #f8cabe;
+  color: #ff6f47;
 }
